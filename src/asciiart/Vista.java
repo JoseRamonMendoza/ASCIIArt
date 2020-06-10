@@ -11,11 +11,11 @@ import javax.swing.text.*;
 
 /**
  * Clase que fungirá como vista para la aplicación
- * 
- * Se utiliza Swing para la UGI, implementa el método main,
- * La lógica del programa está encerrada por el patrón de diseño Estrategy
- * por lo que no es necesario cambiar casi nada para implementar otra tipografía
- * solo se agrega otro elemento a JComboBox
+ *
+ * Se utiliza Swing para la UGI, implementa el método main, La lógica del
+ * programa está encerrada por el patrón de diseño Estrategy por lo que no es
+ * necesario cambiar casi nada para implementar otra tipografía solo se agrega
+ * otro elemento a JComboBox
  *
  * @author jr199
  * @since 1.0.0
@@ -46,7 +46,7 @@ public class Vista extends JFrame {
 
         //Creamos los listeners para los eventos
         addWindowListener(new CerrarVentana());
-        jtfInput.addKeyListener(new ConvertirTexto());
+        jtfInput.addKeyListener(new EscucharTeclado());
         jcbFuente.addActionListener(new SelecionarFont());
 
         //Visibilidad, tamaño y posición de la ventana
@@ -76,7 +76,7 @@ public class Vista extends JFrame {
         pNorte.add(jlTexto);
         pNorte.add(jtfInput);
         pNorte.add(jcbFuente);
-        
+
         //Agregamos las opciones al JComboBox
         //<--Cuando se implemente otra tipografía esto es lo que se tendrá que cambiar
         //se tendrá que agregar otro Item con el nombre de esa tipografía-->
@@ -171,61 +171,66 @@ public class Vista extends JFrame {
         }
     }
 
-    
     /**
-     * Evento que convierte el texto
-     *primero capturamos la fuente que esta selecionada en el JComboBox
-     *con el index capturado pasa a la función EscogerFont lo que hace es 
-     *escoger la fuente y lo guarda en una variable que implemente la interfaz
-     *Fuente, se convierte el texto y luego se pasa al elemento que queremos que 
-     *lo muestre
-     * @since 1.0.0
+     * Método que convierte el texto primero capturamos la fuente que esta
+     * selecionada en el JComboBox con el index capturado pasa a la función
+     * EscogerFont lo que hace es escoger la fuente y lo guarda en una variable
+     * que implemente la interfaz Fuente, se convierte el texto y luego se pasa
+     * al elemento que queremos que lo muestre
+     *
+     * @since 1.1.0
      */
-    class ConvertirTexto implements KeyListener {
+    public void ConvertirTexto() {
+
+        //capturo el index del la fuente seleccionada en el combo box
+        int itemSelecionado = jcbFuente.getSelectedIndex();
+
+        //<--Aquí se encierra la lógica del patrón Strategy-->
+        //creo una variable del tipo de la interfaz y llamo su único método
+        //común entre todas ellas
+        //escogo la estrategia con el index capturado
+        Fuente font = FontManager.EscogerFont(itemSelecionado);
+
+        //capturo el texto de entrada
+        String textoEntrada = jtfInput.getText();
+
+        //convierto el texto de entrada con la estrategia capturada
+        StringBuffer texto = font._ConvertirTexto(textoEntrada);
+
+        //convierto el texto a un string
+        String output = texto.toString();
+
+        //imprimo el string
+        jtaOutput.setText(output);
+
+        //valido los elementos de la ventana
+        validate();
+    }
+    
+    //Evento del ingreso de caracteres por teclado
+    class EscucharTeclado implements KeyListener{
 
         @Override
-        public void keyPressed(KeyEvent e) {
-        }
+        public void keyTyped(KeyEvent e) {}
 
         @Override
-        public void keyTyped(KeyEvent e) {
-        }
-
-        //Cada regreso de presionar una letra...
+        public void keyPressed(KeyEvent e) {}
+        //Cada que livero una tecla presionada... convierto el texto.
         @Override
         public void keyReleased(KeyEvent e) {
-            //capturo el index del la fuente seleccionada en el combo box
-            int itemSelecionado = jcbFuente.getSelectedIndex();
-
-            //<--Aquí se encierra la lógica del patrón Strategy-->
-            //creo una variable del tipo de la interfaz y llamo su único método
-            //común entre todas ellas
-            //escogo la estrategia con el index capturado
-            Fuente font = FontManager.EscogerFont(itemSelecionado);
-
-            //capturo el texto de entrada
-            String textoEntrada = jtfInput.getText();
-
-            //convierto el texto de entrada con la estrategia capturada
-            StringBuffer texto = font._ConvertirTexto(textoEntrada);
-
-            //convierto el texto a un string
-            String output = texto.toString();
-
-            //imprimo el string
-            jtaOutput.setText(output);
-
-            //valido los elementos de la ventana
-            validate();
+            ConvertirTexto();
         }
+        
     }
 
     //Evento del combo box, cada que se seleciona una opción del combo
+    //primero convierte el texto ingresado a ascii art después
     //cambia el foco(cursor) al elemento de entrada de texto
     class SelecionarFont implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            ConvertirTexto();
             jtfInput.requestFocus();
         }
 
