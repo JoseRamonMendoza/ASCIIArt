@@ -11,7 +11,10 @@ public class FontManager {
         switch(fontChoosed){
             case 0:
                 font = new Asterisco();
-            
+                break;
+            case 1:
+                font = new Blocks();
+                break;
         }
         
         return font;

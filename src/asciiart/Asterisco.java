@@ -1,14 +1,16 @@
 package asciiart;
 
 /**
- *Clase que funciona como uno de los modelos, una fuente primaria
+ *Clase que funciona como uno de los modelos, una tipografía de letra
+ * Implementa al interfaz fuente que solo tiene un método _ConvertirTexto
+ * esto se hace para implementar el patrón de diseño Estrategy
  * @author jr199
  * @since 1.0.0
  */
 public class Asterisco implements Fuente {
-    //cada clase debe de tener su altura representada por H
+    //cada clase debe de tener su altura representada por alturaLentra
     //y las letras que soporta así como caracteres especiales
-    private final int H = 5;
+    private final int alturaLentra = 5;
     private final String _a = " #  ,# # ,### ,# # ,# # ";
     private final String _b = "##  ,# # ,##  ,# # ,##  ";
     private final String _c = " ## ,#   ,#   ,#   , ## ";
@@ -40,13 +42,29 @@ public class Asterisco implements Fuente {
     private final String coma = "    ,    ,    , #  ,#   ,";
     private final String punto = "    ,    ,    ,    ,#   ";
 
+    /**
+     * Para convertir el texto a ascii art primero se ingresan los caracteres
+     * con los caracteres a convertir se hace un bucle de la altura de la letra
+     * después, otro bucle de longitud del texto dentro del primero,
+     * el segundo bucle revisará el texto ingresado letra por letra, y sumara al texto de salida
+     * la primera fila del texto.
+     * 
+     * Para cada caso, se revisa la letra ingresada con us switch, se compara con su número ascii
+     * y después se hace un array de esa letra, cada elemento del array es una fila 
+     * de esa letra, el array se hace con un split tomando las variables de la clase
+     * @param textoEntrada El texto a convertir
+     * @return StringBuffer el texto convertiro a ascii con la tipografía de la clase
+     * @since 1.0.0
+     */
     @Override
     public StringBuffer _ConvertirTexto(String textoEntrada) {
         StringBuffer textoSalida = new StringBuffer();
         String parts[];
-        for (int j = 0; j < H; j++) {
+        for (int j = 0; j < alturaLentra; j++) {
             for (int i = 0; i < textoEntrada.length(); i++) {
                 switch (textoEntrada.charAt(i)) {
+                    case 10:
+                        break;
                     case 32:
                         parts = espacio.split(",");
                         textoSalida.append(parts[j]);
