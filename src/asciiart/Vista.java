@@ -1,13 +1,25 @@
 package asciiart;
 
-import com.sun.java.accessibility.util.AWTEventMonitor;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.event.*;
-import java.util.EventListener;
-import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.text.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+import javax.swing.text.DefaultCaret;
 
 /**
  * Clase que fungirá como vista para la aplicación

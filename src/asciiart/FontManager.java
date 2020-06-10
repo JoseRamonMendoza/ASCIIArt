@@ -1,5 +1,7 @@
 package asciiart;
 
+import asciiart.Fuentes.*;
+
 /**
  *Clase que fungirá como controlador utilizando el patrón strategy para cambiar
  * entre fuentes

@@ -1,4 +1,6 @@
-package asciiart;
+package asciiart.Fuentes;
+
+import asciiart.Fuente;
 
 /**
  *Clase que funciona como uno de los modelos, una tipografía de letra
