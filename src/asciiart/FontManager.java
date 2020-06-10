@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package asciiart;
 
 /**
- *
+ *Clase que fungirá como controlador utilizando el patrón strategy para cambiar
+ * entre fuentes
  * @author jr199
  */
 public class FontManager {
-    public static Font EscogerFont(int fontChoosed){
-        Font font = new AsteriscoFont();
+    public static Fuente EscogerFont(int fontChoosed){
+        Fuente font = new Asterisco();
         switch(fontChoosed){
-            case 1:
-                font = new AsteriscoFont();
+            case 0:
+                font = new Asterisco();
             
         }
         

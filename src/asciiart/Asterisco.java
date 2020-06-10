@@ -1,11 +1,13 @@
 package asciiart;
 
 /**
- *
+ *Clase que funciona como uno de los modelos, una fuente primaria
  * @author jr199
+ * @since 1.0.0
  */
-public class AsteriscoFont implements Font {
-
+public class Asterisco implements Fuente {
+    //cada clase debe de tener su altura representada por H
+    //y las letras que soporta así como caracteres especiales
     private final int H = 5;
     private final String _a = " #  ,# # ,### ,# # ,# # ";
     private final String _b = "##  ,# # ,##  ,# # ,##  ";
@@ -167,22 +169,22 @@ public class AsteriscoFont implements Font {
                         textoSalida.append(parts[j]);
                         break;
                     case 87:
-                    case 120:
+                    case 119:
                         parts = _w.split(",");
                         textoSalida.append(parts[j]);
                         break;
                     case 88:
-                    case 121:
+                    case 120:
                         parts = _x.split(",");
                         textoSalida.append(parts[j]);
                         break;
                     case 89:
-                    case 122:
+                    case 121:
                         parts = _y.split(",");
                         textoSalida.append(parts[j]);
                         break;
                     case 90:
-                    case 123:
+                    case 122:
                         parts = _z.split(",");
                         textoSalida.append(parts[j]);
                         break;
