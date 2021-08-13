@@ -90,10 +90,12 @@ public class Vista extends JFrame {
         pNorte.add(jcbFuente);
 
         //Agregamos las opciones al JComboBox
-        //<--Cuando se implemente otra tipografía esto es lo que se tendrá que cambiar
-        //se tendrá que agregar otro Item con el nombre de esa tipografía-->
+        //<--Cuando se implemente otra tipografía esto es lo único que se tendrá 
+        //que cambiar en esta clase, se tendrá que agregar otro Item con el 
+        //nombre de esa tipografía y después añadirlo en FontManger-->
         jcbFuente.addItem("Asterisco");
         jcbFuente.addItem("Blocks");
+        jcbFuente.addItem("Avatar");
 
         return pNorte;
     }

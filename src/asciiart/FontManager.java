@@ -17,6 +17,9 @@ public class FontManager {
             case 1:
                 font = new Blocks();
                 break;
+            case 2:
+                font = new Avatar();
+                break;
         }
         
         return font;

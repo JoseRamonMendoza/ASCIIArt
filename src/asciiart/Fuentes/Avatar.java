@@ -9,40 +9,186 @@ import asciiart.Fuente;
  * @author jr199
  * @since 1.0.0
  */
-public class Asterisco implements Fuente {
+public class Avatar implements Fuente {
     //cada clase debe de tener su altura representada por alturaLentra
     //y las letras que soporta así como caracteres especiales
-    private final int alturaLentra = 5;
-    private final String _a = " #  ,# # ,### ,# # ,# # ";
-    private final String _b = "##  ,# # ,##  ,# # ,##  ";
-    private final String _c = " ## ,#   ,#   ,#   , ## ";
-    private final String _d = "##  ,# # ,# # ,# # ,##  ";
-    private final String _e = "### ,#   ,##  ,#   ,### ";
-    private final String _f = "### ,#   ,##  ,#   ,#   ";
-    private final String _g = " ## ,#   ,# # ,# # , ## ";
-    private final String _h = "# # ,# # ,### ,# # ,# # ";
-    private final String _i = "### , #  , #  , #  ,### ";
-    private final String _j = "##  ,  # ,  # ,# # , #  ";
-    private final String _k = "# # ,# # ,##  ,# # ,# # ";
-    private final String _l = "#   ,#   ,#   ,#   ,### ";
-    private final String _m = "# # ,### ,### ,# # ,# # ";
-    private final String _n = "### ,# # ,# # ,# # ,# # ";
-    private final String _o = " #  ,# # ,# # ,# # , #  ";
-    private final String _p = "##  ,# # ,##  ,#   ,#   ";
-    private final String _q = " #  ,# # ,# # , ## ,  # ";
-    private final String _r = "##  ,# # ,##  ,# # ,# # ";
-    private final String _s = " ## ,#   , #  ,  # ,##  ";
-    private final String _t = "### , #  , #  , #  , #  ";
-    private final String _u = "# # ,# # ,# # ,# # ,### ";
-    private final String _v = "# # ,# # ,# # ,# # , #  ";
-    private final String _w = "# # ,# # ,### ,### ,# # ";
-    private final String _x = "# # ,# # , #  ,# # ,# # ";
-    private final String _y = "# # ,# # , #  , #  , #  ";
-    private final String _z = "### ,  # , #  ,#   ,### ";
-    private final String interrogacion = "### ,  # , ## ,    , #  ";
-    private final String espacio = "    ,    ,    ,    ,    ";
-    private final String coma = "    ,    ,    , #  ,#   ,";
-    private final String punto = "    ,    ,    ,    ,#   ";
+    private final int alturaLentra = 6;
+    private final String _a = " ____ ," 
+            +"/  _ \\," 
+            +"| / \\|," 
+            +"| |-||," 
+            +"\\_/ \\|,"
+            + "      ";
+    private final String _b = " ____ ," +
+"/  _ \\," +
+"| | //," +
+"| |_\\\\," +
+"\\____/,"
+            + "      ";
+    private final String _c = " ____ ," +
+"/   _\\," +
+"|  /  ," +
+"|  \\_ ," +
+"\\____/,"
+            + "      ";
+    private final String _d = " ____ ," +
+"/  _ \\," +
+"| | \\|," +
+"| |_/|," +
+"\\____/,"
+            + "      ";
+    private final String _e = " _____," +
+"/  __/," +
+"|  \\  ," +
+"|  /_ ," +
+"\\____\\,"
+            + "      ";
+    private final String _f = " _____," +
+"/    /," +
+"|  __\\," +
+"| |   ," +
+"\\_/   ,"
+            + "      ";
+    private final String _g = " _____," +
+"/  __/," +
+"| |  _," +
+"| |_//," +
+"\\____\\,"
+            + "      ";
+    private final String _h = " _    ," +
+"/ \\ /|," +
+"| |_||," +
+"| | ||," +
+"\\_/ \\|,"
+            + "      ";
+    private final String _i = " _ ," +
+"/ \\," +
+"| |," +
+"| |," +
+"\\_/,"
+            + "      ";
+    private final String _j = "    _ ," +
+"   / |," +
+"   | |," +
+"/\\_| |," +
+"\\____/,"
+            + "      ";
+    private final String _k = " _  __," +
+"/ |/ /," +
+"|   / ," +
+"|   \\ ," +
+"\\_|\\_\\,"
+            + "      ";
+    private final String _l = " _    ," +
+"/ \\   ," +
+"| |   ," +
+"| |_/\\," +
+"\\____/,"
+            + "      ";
+    private final String _m = " _     ," +
+"/ \\__/|," +
+"| |\\/||," +
+"| |  ||," +
+"\\_/  \\|,"
+            + "      ";
+    private final String _n = " _     ," +
+"/ \\  /|," +
+"| |\\ ||," +
+"| | \\||," +
+"\\_/  \\|,"
+            + "      ";
+    private final String _o = " ____ ," +
+"/  _ \\," +
+"| / \\|," +
+"| \\_/|," +
+"\\____/,"
+            + "      ";
+    private final String _p = " ____ ," +
+"/  __\\," +
+"|  \\/|," +
+"|  __/," +
+"\\_/   ,"
+            + "      ";
+    private final String _q = " ____ ," +
+"/  _ \\," +
+"| / \\|," +
+"| \\_\\|," +
+"\\____\\,"
+            + "      ";
+    private final String _r = " ____ ," +
+"/  __\\," +
+"|  \\/|," +
+"|    /," +
+"\\_/\\_\\,"
+            + "      ";
+    private final String _s = " ____ ," +
+"/ ___\\," +
+"|    \\," +
+"\\___ |," +
+"\\____/,"
+            + "      ";
+    private final String _t = " _____ ," +
+"/__ __\\," +
+"  / \\  ," +
+"  | |  ," +
+"  \\_/  ,"
+            + "      ";
+    private final String _u = " _    ," +
+"/ \\ /\\," +
+"| | ||," +
+"| \\_/|," +
+"\\____/,"
+            + "      ";
+    private final String _v = " _    ," +
+"/ \\ |\\," +
+"| | //," +
+"| \\// ," +
+"\\__/  ,"
+            + "      ";
+    private final String _w = " _     ," +
+"/ \\  /|," +
+"| |  ||," +
+"| |/\\||," +
+"\\_/  \\|,"
+            + "      ";
+    private final String _x = "___  _," +
+"\\  \\//," +
+" \\  / ," +
+" /  \\ ," +
+"/__/\\\\,"
+            + "      ";
+    private final String _y = "___  _," +
+"\\  \\//," +
+" \\  / ," +
+" / /  ," +
+"/_/   ,"
+            + "      ";
+    private final String _z = " ____ ," +
+"/_   \\," +
+" /   /," +
+"/   /_," +
+"\\____/,"
+            + "      ";
+    private final String interrogacion = " ____ ," +
+"/ _  \\," +
+"\\/ \\ |," +
+"   / /," +
+"   \\/ ," +
+"   \\/ ,"
+            + "      "; 
+    private final String espacio = "  ,  ,  ,  ,  ,  ";
+    private final String coma = "  ," +
+"  ," +
+"  ," +
+" _," +
+"|/,"
+            + "      ";
+    private final String punto = "  ," +
+"  ," +
+"  ," +
+"__," +
+"\\/,"
+            + "      ";
 
     /**
      * Para convertir el texto a ascii art primero se ingresan los caracteres
